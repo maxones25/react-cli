@@ -39,19 +39,26 @@ if count_params > 1:
             os.chdir("./"+componentDirname)
 
             templatesFolder = os.path.dirname(os.path.realpath(__file__))+'\\templates\\'
+
             f = open(templatesFolder+"function-component.txt", "r")
             componentTemplate = f.read()
+            f.close()
+
+            f = open(templatesFolder+"component-stylesheet.txt", "r")
+            stylesheetTemplate = f.read()
             f.close()
 
             componentTemplate = componentTemplate.replace('%-STYLESHEET-%', name)
             componentTemplate = componentTemplate.replace('%-COMPONENT_NAME-%', componentDirname)
      
+            stylesheetTemplate = stylesheetTemplate.replace('%-CSS_CLASS_NAME-%', name)
+
             f = open(name+".component.jsx", "a")
             f.write(componentTemplate)
             f.close()
-
+            
             f = open(name+".styles.scss", "a")
-            f.write("")
+            f.write(stylesheetTemplate)
             f.close()
 
             print('function component '+name+' created successfully!')
