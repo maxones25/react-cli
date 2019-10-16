@@ -1,0 +1,9 @@
+
+import { SET_HELLO_WORLD } from './%-REDUCER_FILE_NAME-%.types.js';
+
+export const setHelloWorld = text => {
+  return {
+    type: SET_HELLO_WORLD,
+    text
+  }
+}

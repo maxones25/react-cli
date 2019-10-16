@@ -11,8 +11,11 @@ if count_params > 0:
     if module == 'react':
         import react.module
 
-    if module == 'redux':
+    elif module == 'redux':
         import redux.module
+
+    elif module == 'gatsby':
+        import gatsby.module
         
     else:
         print(module+" not found")

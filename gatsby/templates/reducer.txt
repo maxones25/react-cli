@@ -1,0 +1,16 @@
+
+import { SET_HELLO_WORLD } from './%-REDUCER_FILE_NAME-%.types.js';
+
+const initialState = {
+}
+
+export const reducer%-REDUCER_NAME-% = (state = initialState, action) => {
+  switch (action.type) {
+
+    case SET_HELLO_WORLD:
+        return state
+
+    default:
+        return state
+  }
+}
